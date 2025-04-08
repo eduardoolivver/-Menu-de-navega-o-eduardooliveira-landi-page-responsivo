@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVF Advocacia - Agenda</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #293845;
+            color: #fff;
+            padding: 10px 0;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        header a {
+            color: #fff;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav a.active {
+            background-color: #ddd;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .actions button {
+            margin: 0 5px;
+            padding: 5px 10px;
+        }
+
+        .add-event {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="content://media/external/file/1002789763">ADVOGADO TESTE</a> |
+        <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/login.html">SAIR</a>
+    </header>
+
+    <div class="container">
+        <h1>Agenda de Compromissos</h1>
+
+        <nav>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/Home.html">Home</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/dados.html">Editar Dados</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/clientes.html">Clientes</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/processos.html">Processos</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/agenda.html" class="active">Agenda</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/Partecontraria.html">Parte Contraria</a>
+        </nav>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Descrição</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-10-01</td>
+                    <td>10:00</td>
+                    <td>Reunião com Cliente</td>
+                    <td>
+                        <button onclick="editEvent(this)">Editar</button>
+                        <button onclick="deleteEvent(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2024-10-02</td>
+                    <td>14:00</td>
+                    <td>Audiência no Fórum</td>
+                    <td>
+                        <button onclick="editEvent(this)">Editar</button>
+                        <button onclick="deleteEvent(this)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="add-event" onclick="addEvent()">Adicionar Evento</button>
+    </div>
+
+    <script>
+        function editEvent(button) {
+            alert("Editar evento");
+        }
+
+        function deleteEvent(button) {
+            const row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+
+        function addEvent() {
+            alert("Adicionar novo evento");
+        }
+    </script>
+
+</body>
+</html>

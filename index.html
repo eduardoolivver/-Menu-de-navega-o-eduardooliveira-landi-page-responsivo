@@ -1,0 +1,217 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVF Advocacia - Painel do Advogado</title>
+    <style>
+       
+       
+       #paragrafo1{
+
+color:#696969 ;
+background-color: red;
+
+
+    
+       }
+        
+        
+        
+        body { 
+            font-family: sans-serif;
+            margin: 1;
+            padding: 1;
+        }
+
+        header {
+            background-color: #293845;
+            color: #fff;
+            padding: 10px 0;
+            text-align: right;
+        }
+
+        header a {
+            color: #fff;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav a.active {
+            background-color: #ddd;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .search-bar {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .pagination button.active {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/advogadoteste.html">ADVOGADO TESTE</a> |
+        <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/login.html">SAIR</a>
+    </header> 
+
+    <div class="container">
+        <h1>HVF <span style="font-size: 14px;">ADVOCACIA</span></h1>
+
+        <nav>
+            <a href="content://media/external/file/1002789750" class="active">Home</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/dados.html">Editar Dados</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/cliente.html">Clientes</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/processos.html">Processos</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/agenda.html                          ">Agenda</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/Partecontraria.html">Parte Contrária</a>
+        </nav>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Número ou CPF/CNPJ">
+            <button>
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktc2VhcmNoIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGQ9Ik0xMS43NDIgOS4zMTNsMy40MTUgMy40MTZjLjQyOS40MjkuNDI5IDEuMDQyLjQyOSAyLjU" />
+            </button>
+        </div>
+
+        <table id="processTable">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Cliente</th>
+                    <th>Processo</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12345</td>
+                    <td>João Silva</td>
+                    <td>Processo 1</td>
+                    <td>2022-01-01</td>
+                    <td>
+                        <button onclick="editRow(this)">Editar</button>
+                        <button onclick="deleteRow(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>67890</td>
+                    <td>Maria Oliveira</td>
+                    <td>Processo 2</td>
+                    <td>2022-02-01</td>
+                    <td>
+                        <button onclick="editRow(this)">Editar</button>
+                        <button onclick="deleteRow(this)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <button>Anterior</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Próximo</button>
+        </div>
+    </div>
+
+    <script>
+        function editRow(button) {
+            const row = button.parentNode.parentNode;
+            const cells = row.getElementsByTagName("td");
+            for (let i = 0; i < cells.length - 1; i++) {
+                const currentValue = cells[i].innerText;
+                const input = document.createElement("input");
+                input.value = currentValue;
+                cells[i].innerText = '';
+                cells[i].appendChild(input);
+            }
+            button.innerText = "Salvar";
+            button.onclick = function() { saveRow(button) };
+        }
+
+        function saveRow(button) {
+            const row = button.parentNode.parentNode;
+            const cells = row.getElementsByTagName("td");
+            for (let i = 0; i < cells.length - 1; i++) {
+                const input = cells[i].getElementsByTagName("input")[0];
+                cells[i].innerText = input.value;
+            }
+            button.innerText = "Editar";
+            button.onclick = function() { editRow(button) };
+        }
+
+        function deleteRow(button) {
+            const row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html>

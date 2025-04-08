@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVF Advocacia - Parte Contrária</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #293845;
+            color: #fff;
+            padding: 10px 0;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        header a {
+            color: #fff;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav a.active {
+            background-color: #ddd;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .actions button {
+            margin: 0 5px;
+            padding: 5px 10px;
+        }
+
+        .add-party {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="content://media/external/file/1002789763">ADVOGADO TESTE</a> |
+        <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/login.html">SAIR</a>
+    </header>
+
+    <div class="container">
+        <h1>Parte Contrária</h1>
+
+        <nav>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/Home.html">Home</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/dados.html">Editar Dados</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/clientes.html">Clientes</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/processos.html">Processos</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/agenda.html">Agenda</a>
+            <a href="file:///C:/Users/Hack1/Desktop/Sistema%20pra%20escritorio%20de%20advogacia/Partecontraria.html" class="active">Parte Contrária</a>
+        </nav>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Contato</th>
+                    <th>Processo Relacionado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Empresa XYZ</td>
+                    <td>contato@xyz.com</td>
+                    <td>12345</td>
+                    <td>
+                        <button onclick="editParty(this)">Editar</button>
+                        <button onclick="deleteParty(this)">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fulano de Tal</td>
+                    <td>fulano@exemplo.com</td>
+                    <td>67890</td>
+                    <td>
+                        <button onclick="editParty(this)">Editar</button>
+                        <button onclick="deleteParty(this)">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="add-party" onclick="addParty()">Adicionar Parte</button>
+    </div>
+
+    <script>
+        function editParty(button) {
+            // Lógica para editar parte contrária
+            alert("Editar parte contrária");
+        }
+
+        function deleteParty(button) {
+            // Lógica para excluir parte contrária
+            const row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+
+        function addParty() {
+            // Adicionar parte contrária - Lógica adicional pode ser implementada aqui
+            alert("Adicionar nova parte contrária");
+        }
+    </script>
+
+</body>
+</html>
